@@ -1,0 +1,179 @@
+\documentclass[a4paper]{report}
+%pridat documentclass[twoside] - pro tisk
+%\input{thesis_settings/page_settings}
+\input{thesis_settings/packages_list}
+\graphicspath{ {images/} }
+%
+%
+\begin{document}
+%
+\begin{titlepage}
+\title{Introduction to\\Additive Manufacturing Technologies}
+\author{Martin Hejtmanek}
+\date{28.2.2017}
+\maketitle
+\end{titlepage}
+%
+\chapter*{List of shortcuts}
+\addcontentsline{toc}{chapter}{List of shortcuts}
+\begin{itemize}
+\item[AM]Additive manufacturing
+\item[BJ]Binder jetting
+\item[DED]Directed energy deposition
+\item[DMLS]Direct metal laser sintering
+\item[FDM]Fused deposition modeling
+\item[FFF]Fused filament fabrication
+\item[LOM]Laminated object manufacturing
+\item[MJ]Material jetting
+\item[PBF]Powder bed fusion
+\item[SL]Sheet lamination
+\item[SLS]Selective laser sintering
+\item[STL]Stereolitography or STL file format
+\end{itemize}
+
+
+\chapter{Introduction}
+%
+%
+%
+
+
+\section{About the thesis}
+There are many terms like Additive Manufacturing, 3D printing, rapid prototyping and more, that are used to describe specific technologies. Although they are not precisely synonyms, all of them are related to a specific way of product manufacturing. Nowadays, we are still used to making machines and parts from solid blocks of raw material, and then machining away material until desired shape if acquired. Also casting, forming, welding and other technologies are used in the classical process chain, in order to make a specific part.\\
+However, since 1980s there were new and different manufacturing technologies being developed, that used vastly different approach. This trend still continues with more and more interest being paid to this field. Those technologies are commonly named Additive manufacturing technologies (hereinafter AM). The main underlying principle of all AM technologies, that will be listed later, is making part by adding material, instead of removing it. This approach has many advantages over previously mentioned conventional technologies, but it also brings different problem sets that need to be solved.\\
+As mentioned, AM technologies are on a rise. It is now more than 30 years since humble beginnings of the first AM technology, Stereolitography. Since then, AM industry developed rapidly and is today worth several billions of dollars on the market. Its significance can’t be stressed out enough, and I think that sometimes we are not paying as much attention to AM as we should. It probably takes a lot of time to fully realize, how big difference in terms of parts production AM means. Sometimes we might not realize, that some parts we are used to make using classical approach, could be made using AM much faster and without perfectly planned pre-production planning, post-production and with less waste material. AM technologies were developed not to replace conventional technologies, which will probably always have its place on the market. Still, conventional processes can be supported by AM when possible in order to increase manufacturing speed, simplicity and reduce product price. There are even available machines, trying to merge CNCs and AM into a single functional production machine.\\
+For the problematic of AM machines is very complex, choosing a single technology and fully describing it into detail would be sufficient for diploma thesis. Therefore it is simply out of scope of this BT, to give detailed description of all technologies. There are many intricate processes included, related to heat and mass transfer, material processing and properties, precise positioning systems, careful regulation of build environment conditions and much more.\\
+The main goal of this Bachelor thesis (BT) is to make research on the AM field and available technologies. Then, make a brief, but complete and understandable summary and describe ongoing processes. This BT should give the reader an opportunity to understand essentials of individual technologies - know their strengths, weaknesses, main working principles and for which applications are they suitable.\\
+The future of AM market is still to unfold, but various statistics are showing that AM machines will be more and more commonly used in production process - especially with the trend of available materials improvement or development of new materials and price reduction of all key electronic / mechanical parts. It is therefore likely that in future AM machines will be commonly used during production planning and prototyping phase.
+\todo[inline]{Doplnit citace"""}
+
+\newpage
+\section{Terminology}
+This thesis has the term AM in its name. That doesn't mean other terms couldn't have been used instead. I will briefly mention similar terms commonly used in context of production technologies.\\
+From all mentioned possibilities, I choose to use term “Additive manufacturing” – AM in this thesis, because it is the most commonly used term for described technologies. In Czech language, term “3D printing” could have been used, which is by some guessed to be the term, that will be used the most in years to come. The reason is that people are familiar with home 2D printers, hence the term is easy to use and remember. There is no point in saying that one term is better to use than the other one – it is not an objective question, but a matter of choice, and I believe term AM fits the purpose of this BT the most.
+\subsection{Automated fabrication}
+Term \textbf{“Automated fabrication”} were used before AM. It was supposed to emphasize the fact that computers and controllers could take control of manufacturing processes and make them much easier to do.
+\subsection{Freedom fabrication}
+“Freedom Fabrication” was used to imply that the build time of a part doesn’t depend on the geometry. In other words, the “more complex parts take longer time to build” rule, which is usually applied with conventional production methods, doesn’t apply here.
+\subsection{Additive Manufacturing}
+“Additive manufacturing” term is simply saying, that we are adding material to build the part instead of removing it.
+\subsection{3D printing}
+“3D printing” term was mainly used within MIT researchers, and was implying the application of common 2D printers and adding a third dimension.
+\subsection{Rapid prototyping}
+“Rapid prototyping” was term used in connection with additive manufacturing. It is not saying anything about any specific technologies. Instead, it’s emphasizing the speed and ease of AM processes compared to conventional prototyping ways. Rapid prototyping is saying – with AM, one is able to make (functional) prototypes much faster and cheaper without any other special equipment needed.\\
+
+\todo[inline]{doplnit citace}
+\todo[inline]{udelat seznam zkratek}
+%
+%
+%
+\chapter{About AM in general}
+%
+\section{History of AM}
+First of all, it is important to note that development of AM technologies can’t be separated from development in related fields. We can say that AM machines consist of many intricate sub-systems. For example, very precise and fast positioning system are required. Powerful lasers are used to melt and fuse material together. Computers, micro controllers and electronics in general are required to control the environment and guide the build process. Last but not least, materials were developed to suit specific AM technology. Without these and many more improvements, there would be no machines like the ones today. When we compare nowadays machines and the ones from AM beginnings, there are big improvements. First machines could be slower, less precise, encountered material behavior problems, more buggy, but most importantly – much more costly.\\
+As mentioned in the introduction, AM has been out there longer than it might appear. It is not technology of 21st century, but it originates in 1970s / 1980s, when there were only conventional methods. For the first time, attention was paid to possibility of curing photopolymers into specific shape in 70s. An idea was developed to make use of additive production using layer approach – construction of separate layers, merging into final product.\\
+\begin{wrapfigure}{r}{0.5\textwidth}
+ 	\includegraphics[width=\textwidth/2]{firstPrintedObject}
+	\caption{First object made with AM}
+\end{wrapfigure}
+\todo[inline]{doplnit zdroj}
+The first AM technology commercialized was Stereolitography. There were experiments with curing layers of photopolymer resins simultaneously, thus creating separate layers. It was in Japan in 1981, when first schematics of possible technology using photopolymer-hardening were described and proven to work. \todo{citace clanku} Later in 1984-1986, Chuck Hull filed the patent for the first working machine. \todo{citace patentu} In 1986 he also founded “3D systems” company, which was probably the first company to do business with 3D printers. Nevertheless, Chuck Hull is important for his contribution to 3D printing field by major work on the “STL file format” – a specific format used by computers for describing the geometry of fabricated parts. (Will be described later).\\
+Next technology that emerged later was “FDM” (Fused deposition modelling). This technology is using material in a form of wire, which is molten and deposited into a single layer (described later more). The patent for FDM was filed in 1989 by S. Scott Crump from Stratasys Inc.  - also very important company in AM business that is still in operation.\\
+In the first half of 90s, other technologies were starting to be commercialized. They usually went under their specific names like SLS (selective laser sintering) or  LOM (laminated object manufacturing). These technologies were filling in gaps in missing technologies as Powder bed fusion, Sheet lamination, Material jetting and Binder jetting. There is probably no need for naming all individual patents. Still we have to realize that patents have a major impact on development in AM. Technologies, processes and even materials from AM are subjected to patents. When patents are no longer held after 25 years, the competitiveness of other companies grows, resulting in bigger supply of AM machines available, thus also in their price reduction. Expiration of patents was one of the reasons, why we experienced rapid growth of FDM machines.
+
+\section{Comparison of AM and CNC machining}
+%
+Before I describe and categorize basic AM processes, it is important to see the distinction between AM and conventional CNC manufacturing. The reason is that both approach the same problem – manufacturing – from completely different point of view. Conventional manufacturing processes are based on machining and processing block of raw material, thus it is subtractive process. This way, using modern equipment, one is able to achieve very high precisions of manufactured part, with good surface quality and roughness. Commonly, materials as steel and other metals, plastics, wood and many other materials can be processed. But in general, it is often the way that parts of complex shapes could be very tricky to make. With CNCs, it is simply impossible to create objects with inner cavities or other internal features by machining the inside of the object. Also, machining shapes like curved overhangs or crevasses can be problematic. Furthermore, we haven’t considered the amount of waste material. Because we simply need block of raw material, exceeding the dimensions of the part being made in all directions, it is not rare to machine away more than 80\% of material, becoming waste. Although scrap material is recycled, the blocks of raw material are very expensive. Machining parts for use in aerospace industry might be a typical example. Often the parts are of very complex shape, and made out of lightweight metals such as titanium. But requiring big block of titanium might be unnecessarily expensive, when significant part of provided material in fact is unused and thrown away.\\
+Another field of comparison of AM and conventional production processes is the scale and amount of produced parts. Conventional methods of machining are known for a long time, and are used for series production. The combination i.e. of CNC machining with mold casting is a fast and efficient process. Problems will occur, regarding these series-process chains, when we want to alter a few manufactured parts – it is often not suitable for making only few parts, because of long preparation time, prototyping phase, and expensive equipment specially only for one kind of a product.\\
+Most of AM technologies are not limited by mentioned obstacles, such as manufacturing inner cavities or waste material. The main principle is that we don’t machine away unwanted material, but we only deposit material where we do want it. This incredibly simple idea results in fact of having almost no waste material (some technologies require material recycling, but recycled material is immediately ready for use – no need for re-melting and so…). Because AM machines are based on material deposition instead of removal, we could say that time of product manufacturing is almost independent of it’s shape. In other words, AM machines don’t care, if we print a box, small statue, of a scaled model of a flower. The build time depends only on the amount of material. Of course different technologies differ in build-speed). This attribute comes very handy in production of single custom parts of complicated shapes. The example might be printing custom body-parts of implants, since they are always unique, person to person. Also, shape-free manufacturing comes very handy to designers, which used to be limited by capabilities of conventional machines, making production of complex shapes tricky.\\
+For the comparison to be complete, it should also be mentioned that machining is often difficult for processing hard and brittle materials. On the other hand, machining from it’s principle works in an isotropic way, meaning there shouldn’t be differences in machined part related to the direction of CNC tool movement.\\
+When we look at AM processes, we see the major difference. Simply said, waste material is no longer a problem. When we want to produce small number of customized parts or objects of complicated shape with curved 3D features, AM enables us to do so. The general process of object making (of course depending on specific technology) takes longer time. But, considered that i.e. complex parts can be manufactured simultaneously in one go, they don’t have to be moved from machine to machine. This can cause significant time saving, resulting in faster making process, even though the technology itself is not faster than CNC.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{additiveSubtractiveManufacturing}
+\caption{Additive vs subtractive manufacturing illustration}
+\end{figure}
+
+\todo[inline]{Vzpomenout si jestli tu byly nejake citace}
+
+\section{What precedes part production - AM process chain}
+If we want to make use of modern AM machines, we have to be able to prepare everything necessary for our specific part to be made. Same as with other manufacturing  technologies, making parts using AM requires more or less preparation, and sometimes also post-processing is required. Let's look at the necessary steps, preceding or following after the part making itself.\\
+\subsection{Information about produced part}
+If we take it from the very beginning, we have to start with knowledge of part to be produced. I.E, we have to know, what are we building. These information is actually virtual model of a part. This virtual model in electronic form can be handled by computer and converted to other formats, which AM machines accept. There are more ways of creating virtual model of the part, but probably only two methods are used.
+\subsubsection{CAD modeling}
+When possible, it is obvious that creating model using CAD software can be the most efficient solution. When we use modern CAD systems, changing virtual model doesn't require much effort. It is very useful, if we are planning to make some changes with produced part, so we are iterating and changing every version to make the part better. With CAD, it can be matter of a few minutes / hours to make model of a new generation and print it. With mass production tools, this process of iteration and changing production tools (such as casting tools) can be very time-consuming and costly.
+\subsubsection{AM and reverse engineering}
+It can also happen that we want to produce part, but we can make use of CAD software. The part can be too complicated to make a virtual model, and modeling would be inefficient. If we already have a part we want we want to build, i.e. we want to "copy" a real existing part, we can make a virtual model using some 3D scanning system or device. There are many devices on the market, enabling us to do so. Scanning devices vary in many properties. Examples might be:\\
+\todo[inline]{obrazky}
+contact or non-contact device\\
+destructive or non-destructive device\\
+Examples of contact scanning device can be machines used in metrology for precise part measurement. Precision if several micrometers can be achieved.\\
+Non-contact scanning devices vary in methods of measuring. Lasers can be utilized for distance measuring, or optical systems can be used. It is even possible with special photographic / optical software to obtain 3D model from multiple pictures of an object. Also methods already utilized in medical field can be used - MRI machines or CT machines (micro-CT respectively) have been in use for several decades for medical purposes. Today, we can extend the use of these technologies, and use them as very precise scanning devices.
+\subsubsection{File formats for AM software}
+After obtaining the data, it is then only matter or computer processing. Software for use with AM machines usually accept only specific data formats. The most common, that was already mentioned, is the \textbf{"stl" file format}. Although it is not essential to know, how the file format represents the geometry of the part, it can be useful to know, because it is possible that some glitches or errors can happen during processing. If we know the format specifics, we can guess where the problem can be. So when it comes to "stl" file format, it represents the whole geometry with triangles - it creates a mesh of points on the whole surface of the part, and then connects the nodes to form triangles. That means if we want to accurately represent part geometry, with stl we have to have very fine mesh of points. Greater the distances between mesh nodes are, greater the imperfections of the virtual model will be.\\
+This file format is generally still accepted for use with AM machines, but it has some drawbacks. The biggest one is, that the part geometry is the only thing it can describe. But with modern AM machines, that is not enough, if we want to include more information about the part. That is where additive manufacturing format -\textbf{"AMF" file format} comes in. Using "AMF" format enables us to describe color of part for multi-color machines, material specification, or lattices and constellations within the part.
+\subsection{Further data manipulation}
+As expected, the AM machine itself doesn't accept nor "AMF" or "STL" file format. Since AM machine builds the part layer by layer, it only needs to know how to build each separate layer. Therefore we have to use software called \textbf{Slicer}. Each AM machine will have it's specification, but generally speaking, the output of the slicer should be a file with information, representing 2D shape of each layer. The machine itself then deals with the build process itself and starts printing layers - it doesn't care about their shape, it only deals with mechanics and kinematics of building system.
+\subsection{machine preparation}
+When the data are processed and ready to be send to the machine, Last remaining thing to be done before the build is the machine preparation. In some cases, there might be no need for any further preparation. With machines, utilizing some kind of heat processing of material, preheating is often done. With PBF for example, preheating of the build space to high temperatures is done. Same with FDM machines, the metal extrusion nozzle is always heated to build temperature. Apart from preheating, some additional actions can be made, such as often crucial machine calibration or checking for any errors before build starts. Preparation stage is very important and shouldn't be neglected - small imperfection in the built part, caused by wrong machine preparation, can easily cause problems during the build process and ruin final product.
+\subsection{post-processing}
+When we remove the part built, it might need some additional care to be ready for use. If building process heated the part, we usually wait until the part cools to acceptable temperature to be processed further. Part removal is not always simple. With PBF technology, the excessive powder has to removed and the part cleaned, usually by blowing pressurized air. Same with Stereolitography or Binder jetting, we have to clean the part from excessive photopolymer or powder respectively.\\
+If some support structures were added to enable the build, they also have to be removed mechanically. It is often done by hand, and it can involve honing, grinding and cutting. For many parts built with PBF or DED technology, there is residual stress in the part. Post-processing heat treatment is required to remove these, caused by uneven heating and cooling and rapid temperature changes.\\
+Also with other technologies, post-processing can be desired, although not necessary. For example, with FDM technology, where the final roughness of the part is not very good, manual grinding, polishing and painting can be done to improve the part appearance.
+
+\todo[inline]{tady by se urcite hodily obrazky}
+\section{Fields of applications}
+As mentioned, there are several considerable differences between AM and machining part production. That's the main reason, why AM can be efficiently used in some fields more than others. The biggest advantages, such as shape-free production, ease of change of the model, speed of production (in small quantities) makes it great for purposes such as prototype making, presentation product making, easily-produced life-sized parts (for visualization or testing), little waste material and making products that can't be mass produced.\\
+\subsection{Medicine}
+There are again many medical applications, whether we are talking about medical instruments or making prosthetic limb parts. Creating these isn't anything new, joint replacement surgeries are several decades old \todo{citace nejakeho clanku}. Artificial joints can be made using CNC machines, and if made with AM machines, they will require post-processing - at least grinding and polishing to achieve perfect surface smoothness.\\
+But there is more to AM machines in medicine - apart from building replacement for body parts, such as joints, skull replacement part, the technology can be used for printing also specially designed surgical tools. Reason being, surgical tools can be very special, developed for only single type of surgery. Therefore only few pieces of the equipment can be produced, and mass production isn't appropriate. \todo{obrazek nastroje}
+Also leg / arm plasters can be made, designed to hold the limb in desired position and to be comfortable - built specifically to fit one's limb. Another example of combining AM with medicine can be custom printed teeth. There is already special machine, that combines AM with 3D scanning procedure, and is capable of scanning patient mouth and printing custom tooth in very short time. \todo{citace - odkaz na tiskarnu}. Not forgetting, customized hearing aids can be very handy. Since everybody in need of hearing aid has different ear size and shape, shaping the outside frame of hearing aid can ensure that the final product will fit the customer perfectly. Last but not least, specific shapes can be printed for educational purposes, so that students can train performing sensitive  surgeries or interventions on models, accurately representing specific body part.
+\subsection{Aviation industry}
+Although it is not as primary production technology in aviation field, it can open great deal of possibilities. Many parts for aviation purposes are of complex shapes, and therefore complicated for machining. When a part from solid titanium block is machined to shape of i.e. turbine blade, it can mean that most of the material is machined away, meaning even more than 70\%. Waste titanium can be recycled, but still the price of such titanium solid block, the price is in range of thousands EUR. When using PBF technology with titanium powder, we could almost eliminate the waste material, thus reducing the initial price of material. But it is true, that extra machining and polishing of such part would be required after, which could increase the costs, saved on material.
+\subsection{Automotive industry}
+Car production is, and probably will remain, thing of mass production. Yet, there is still place where AM can prove itself as useful. Before mass production, prototype making is again essential part, and therefore great deal of attention should be paid, not to make mistakes during series preparation. Lightweight metals such as aluminum can be utilized, for functional parts such as valves, canals or tubes of specific shape designed for specific car type. Also polymers can be used for interior design, i.e. during stage of preparing "non-stressed" parts such as handles, coverings or panel parts. Here it can be handy to use it for visualizing the interior.
+\subsection{Architecture or design}
+The reasons of AM being useful in this field is probably apparent from previous description. Designers more than others can appreciate shape-free manufacturing, and not having to bother with limitations of conventional manufacturing. 
+\subsection{Educational purposes}
+This field can be found not as significant as others. Still, the fact is teachers and lecturers at high schools or universities could easily make use of AM during lecturing. For example, teaching biology or chemistry often require lots of teaching supplies, such as model of skeleton or models of chemical compounds to visualize chemical bonds. These supplies are often expensive, because there are not that many schools buying such supplies. Result is low demand for such items, and higher price - body parts models can cost hundreds of EUR. With AM, teachers can only download desired model (such as human organ, or chemical bond model) and print it, all that for fraction of the original price.
+%
+%
+%
+\chapter{Materials for use in AM}
+The scale of materials usable for purposes of AM is very wide. We can today print plastic objects from different plastics like Nylon, polystyrene and others. Metal objects can be printed, out of common metals such as steel and it's alloys, titanium, aluminum and so on. Certain technologies make it possible to print even sand parts. Other methods enable building colorful parts. But since there are so many materials, we should be able somehow to categorize them into logical groups. Also, this categorization is related with categorizing different AM technologies themselves.  Materials, used in each technology, will be described in detail in related chapters – this is only brief summary of material options.\\
+In following lines, some information might be slightly unprecise or misleading. The reason is, that categorization of AM processes and related issues is very sophisticated and there are many slight differences among technologies. Therefore I will try to summarize some main ideas, but detailed description can be found in chapters devoted to specific technologies.\\
+Classification:
+State of raw material
+Chemical composition and properties – curling / warpage, mech. properties, speed of curing, heat transfer coefficient, thermal expansion coefficient\\
+
+\section{Material state}
+One way of materials categorization is divide them, based on phase / physical state. Materials before printing process can be either solid or liquid. Solid materials can be used in forms of powder, wire or thin sheet / folia. Liquid materials so far only photopolymers.
+\subsection{Solid powder materials}
+Powder materials are usually used for metal printing. Nevertheless, plastics and ceramics powders or sand might be used. Powder material can be processed by partially or fully melting and fusing together, creating a solid part – technologies “powder bed fusion” or “directed energy deposition”. Laser or electron beam can be used to melt the powder. Also, the powder can be glued by a special substance called binder – see “binder jetting” technology. 
+\subsection{Solid wire form materials}
+Wire-form material is always used with “Fused deposition modeling” technology (or rarely used with “directed energy deposition”). Within FDM\todo{uvest do seznamu zkratek} , probably today the best-known and widespread technology, the plastic wire is partially melted and in controlled manner “spilled”. Due to its viscosity, one can precisely control the deposition process and it’s precision. After solidified again, it forms final object.
+\subsection{Solid sheet form materials}
+Sheet-form materials are used within the “Sheet lamination” technology. It uses thin sheet of metal, paper or basically any material, that can be cut and glued together. Each sheet = layer is cut into the shape.
+\subsection{Liquid materials}
+As mentioned, there are substances called photopolymers, used for AM. The principle is having a bath of photopolymer, which is precisely cured by some UV light. Where cured, material undergoes a chemical reaction, creating bonds between separate molecules, thus solidification from liquid state. "Stereolitography" of "Material jetting" commonly uses photopolymers. In those chapters, materials will be described more.\\
+\section{Chemical composition}
+We might also want to group materials based on their chemical composition. I will not describe fully chemical properties of materials like type of molecule bonds. Still, easily we can distinguish between main groups of materials. One of them are metals. Metals are generally materials that are good electricity conductors. This property is related to their other properties. Metals have generally “high” yield strength (hundreds of MPa), very variable thermal expansion coefficient and medium-high melting point (important for heat curing of metals). They are usually also able to undergo some plastic deformation and do not absorp water.
+Other category is group of plastic materials. These materials have much lower yield strength, thus are not suitable for functional stressed parts. They almost do not conduct electricity and have low thermal conductivity coefficient, but higher heat expansion coefficient. Their melting / glass transition point is much lower than metal melting points, so they are easier to cure in this way.
+Third category of materials used in AM are ceramic materials. Except of one new technology (that will not be discussed in the thesis ), curing process is using ceramic powder. Melting point of ceramics is generally slightly higher than commonly used metals, but of course there are exceptions. Ceramics is very hard and strong, yet brittle. This property is often found problematic in AM. Because ceramics show almost no plastic behavior, they crack easily. This makes ceramics hard to process this way, because during printing rapid temperature gradients occur, causing thermal stresses and cracking.
+Among other materials can be i.e. photopolymers. Even though they are plastic – polymers, I’d like to distinguish between them and other plastic materials, because they differ fundamentally in curing process. Photopolymers are default liquid material, which consists of more types of additives to make curing with UV light easier. So, depending of point of view, they might be considered different material than other plastics used in AM.
+Also, mixtures of different materials should be mentioned. Analogically we can make metal alloys of specific composition, we are able to incorporate small particles into plastic wires for printing, like bronze of wood. For example - if we have kind of material, consisting of 80\% wooden particles and 20\% polymer holding wooden  particles together, it is among one’s preference to say about which material we are talking about.\todo{odkaz na material}
+\section{Material processing}
+Among other ways, we can also divide materials by the way of their processing.
+\subsection{Heat processing} Some materials are processed by heat. They are fully or partially melted, and after cooling, material (like in most processes using metal powders) fuses or solidifies together into single physical object. As sources of heat are use powerful lasers, or in case of conductive materials electron beam can be used instead.
+\subsection{Light processing}
+On the other hand, liquid photopolymers are cured by UV light. Light of specific wavelength initiates chemical reaction within material, causing creation of new chemical bonds.
+\subsection{Processing without curing}
+Binder jetting is the only technology, which basically doesn’t process the material at all – it only binds the material together with special glue, called binder. The is no change happening of properties of the material.
+
+\section{Common problems of material processing}
+What we should realize when thinking about curing materials, are problems we are bringing with the process. Heat processes are related with thermal stresses, expansion / contraction and subsequent curling, warping and cracking. The same issue is related to curing photopolymers, where curling and warping is caused no by heat, but by change of volume of material when changing state of matter. This is unique to binder jetting technology, which doesn’t have to deal with these issues – as will be discussed in dedicated chapter.\\
+It is not always necessary to strictly distinguish between different materials. Instead of having fixed table of categorized materials, we should have complex knowledge of different kinds, their properties, pros and cons. 
+
+\tableofcontents
+\listoftodos
+\end{document}
